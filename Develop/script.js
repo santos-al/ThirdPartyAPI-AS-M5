@@ -7,29 +7,23 @@ $(document).ready(function () {
 
   // Saves the text in the time slot of the corresponding save button
   $('.saveBtn').on("click", function () {
-    value = $(this).siblings('.description').val();
-    time = $(this).parents('.time-block').attr('id');
+    let value = $(this).siblings('.description').val();
+    let time = $(this).parents('.time-block').attr('id');
     localStorage.setItem(time, value);
   })
   
   // Keeps track of the current time and formats it into just the hour. Used to highlight present time on app.
   var now = dayjs().format('HH');
-  now = 10;
-  console.log(now);
   if (now >= 9 && now <= 17) {
     $(`#hour-${now}`).addClass('present')
   };
 
   // Upon page refresh check local storage for any key pairs and load them onto the page
   for (i = 9; i < 17; i++) {
-    val = localStorage.getItem(`hour-${i}`);
-    $(`#hour-${i}`).children('.description').val(val);
+    let storageVal = localStorage.getItem(`hour-${i}`);
+    $(`#hour-${i}`).children('.description').val(storageVal);
   }
 
-  // let test = localStorage.getItem('hour-9');
-  // testText = "it works"
-
-  // textArea = $('#hour-9').children('.description').val(test);
 
 
   
