@@ -7,8 +7,11 @@ $(document).ready(function () {
 
   // Saves the text in the time slot of the corresponding save button
   $('.saveBtn').on("click", function () {
-    test = $(this).siblings('.description').val();
-    console.log(test)
+    value = $(this).siblings('.description').val();
+    time = $(this).parents('.time-block').attr('id');
+    localStorage.setItem(time, value);
+    console.log(value);
+    console.log(time);
   })
     // localStorage.setItem("hour-10", value);
   // $('hour-9.description').replaceWith(`<textarea>${textinput}</textarea>`)
