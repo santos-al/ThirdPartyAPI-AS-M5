@@ -10,8 +10,6 @@ $(document).ready(function () {
     value = $(this).siblings('.description').val();
     time = $(this).parents('.time-block').attr('id');
     localStorage.setItem(time, value);
-    console.log(value);
-    console.log(time);
   })
   
   // Keeps track of the current time and formats it into just the hour. Used to highlight present time on app.
@@ -21,6 +19,18 @@ $(document).ready(function () {
   if (now >= 9 && now <= 17) {
     $(`#hour-${now}`).addClass('present')
   };
+
+  // Upon page refresh check local storage for any key pairs and load them onto the page
+  for (i = 9; i < 17; i++) {
+    val = localStorage.getItem(`hour-${i}`);
+    $(`#hour-${i}`).children('.description').val(val);
+  }
+
+  // let test = localStorage.getItem('hour-9');
+  // testText = "it works"
+
+  // textArea = $('#hour-9').children('.description').val(test);
+
 
   
   // TODO: Add a listener for click events on the save button. This code should
