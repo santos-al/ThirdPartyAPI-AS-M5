@@ -29,13 +29,9 @@ $(document).ready(function () {
 
   // Sets the color for all hours in the future
   for (i = (now + 1); i <= 17; i++) {
-    console.log(i);
     $(`#hour-${i}`).removeClass('past');
     $(`#hour-${i}`).addClass('future');
   }
-    // if ((now - hour) < 0) {
-    //   $(`#hour-${hour}`).addClass('future');
-    // }
 
   
   // TODO: Add a listener for click events on the save button. This code should
