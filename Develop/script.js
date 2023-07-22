@@ -34,4 +34,11 @@ $(document).ready(function () {
   }
 
   // TODO: Add code to display the current date in the header of the page.
+
+  displayDay = dayjs().format('dddd');
+  displayDate = dayjs().format('MMMM D, YYYY')
+  console.log(displayDay);
+  $('#currentDay').text(`Today is ${displayDay}, ${displayDate}`);
+
+  // id is "currentDay"
 });
