@@ -13,34 +13,15 @@ $(document).ready(function () {
     console.log(value);
     console.log(time);
   })
-    // localStorage.setItem("hour-10", value);
-  // $('hour-9.description').replaceWith(`<textarea>${textinput}</textarea>`)
-
-  // button9.on('click', localStorage.setItem("hour-9", "hello"));
-  // button9.click(() => {localStorage.setItem("hour-9", "w")})
-
-  // $('saveBtn')
   
-  // Keeps track of the current time and formats it into just the hour.
-  // var now = dayjs().format('HH');
-  // now = 10;
-  // console.log(now);
-  // if (now >= 9 && now <= 17) {
-  //   $(`#hour-${now}`).addClass('present')
-  // };
+  // Keeps track of the current time and formats it into just the hour. Used to highlight present time on app.
+  var now = dayjs().format('HH');
+  now = 10;
+  console.log(now);
+  if (now >= 9 && now <= 17) {
+    $(`#hour-${now}`).addClass('present')
+  };
 
-  // Logic for save button
-  // $('#hour-9').children('textarea').append('TEXT');
-
-
-// $( "input" )
-//   .on( "keyup", function() {
-//     var value = $( this ).val();
-//     $( "p" ).text( value );
-//   } )
-
-//   .trigger( "keyup" );
-  
   
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
