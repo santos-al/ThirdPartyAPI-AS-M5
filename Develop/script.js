@@ -33,12 +33,12 @@ $(document).ready(function () {
     $(`#hour-${i}`).addClass('future');
   }
 
-  // TODO: Add code to display the current date in the header of the page.
-
+  
+// Displays the current date
   displayDay = dayjs().format('dddd');
   displayDate = dayjs().format('MMMM D, YYYY')
   console.log(displayDay);
   $('#currentDay').text(`Today is ${displayDay}, ${displayDate}`);
 
-  // id is "currentDay"
+  
 });
